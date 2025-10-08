@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge World 🌍</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for the Inter font and custom colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kw-dark': '#0f172a', // Slate 900
+                        'kw-blue': '#3b82f6', // Blue 500
+                        'kw-light': '#f1f5f9', // Slate 100
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Ensuring smooth scrolling for internal links */
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-kw-dark text-kw-light">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-kw-dark/95 backdrop-blur-sm shadow-lg border-b border-kw-blue/30">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-extrabold text-kw-blue hover:text-white transition duration-300 rounded-lg p-1">
+                Knowledge World 🌍
+            </a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-kw-light hover:text-kw-blue transition duration-300 p-2 rounded-lg">About</a>
+                <a href="#featured" class="text-kw-light hover:text-kw-blue transition duration-300 p-2 rounded-lg">Content</a>
+                <a href="#contact" class="text-kw-light hover:text-kw-blue transition duration-300 p-2 rounded-lg">Connect</a>
+            </div>
+            <!-- Simple Mobile Menu Placeholder (Hidden on large screens) -->
+            <button class="md:hidden text-kw-light hover:text-kw-blue" aria-label="Toggle menu" onclick="toggleMenu()">
+                <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#about" class="block text-kw-light hover:text-kw-blue transition duration-300 py-2 w-full text-center" onclick="toggleMenu()">About</a>
+                <a href="#featured" class="block text-kw-light hover:text-kw-blue transition duration-300 py-2 w-full text-center" onclick="toggleMenu()">Content</a>
+                <a href="#contact" class="block text-kw-light hover:text-kw-blue transition duration-300 py-2 w-full text-center" onclick="toggleMenu()">Connect</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section id="home" class="py-24 sm:py-32 flex flex-col items-center text-center">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl sm:text-7xl font-extrabold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-kw-blue to-white animate-pulse">
+                    Explore the Unknown. Master the Known.
+                </h1>
+                <p class="text-xl sm:text-2xl text-kw-light/80 mb-8">
+                    Your guide to the most fascinating discoveries in science, history, and the universe. **Knowledge is power, shared with the world.**
+                </p>
+                <!-- This button links to your WhatsApp Channel -->
+                <button onclick="handleCtaClick()" class="bg-kw-blue hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-full shadow-xl transform transition duration-500 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-kw-blue/50">
+                    JOIN WHATSAPP CHANNEL
+                </button>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <hr class="border-t border-kw-blue/50 mb-16">
+
+        <!-- About Section -->
+        <section id="about" class="py-16 sm:py-20 text-center">
+            <h2 class="text-4xl font-bold mb-6 text-kw-light">About Knowledge World</h2>
+            <p class="max-w-4xl mx-auto text-lg text-kw-light/70">
+                Knowledge World 🌍 is dedicated to quenching your curiosity. Every week, we dive deep into complex topics—from the quantum realm and ancient civilizations to modern technology and astrophysics. We break down the facts, explore the implications, and deliver high-quality, engaging content that makes learning accessible and exciting. Join us as we journey through the cosmos of information!
+            </p>
+            <div class="mt-12 flex justify-center items-center space-x-8">
+                <div class="text-center">
+                    <span class="text-4xl font-extrabold text-kw-blue">500+</span>
+                    <p class="text-sm text-kw-light/70">Videos Produced</p>
+                </div>
+                <div class="text-center">
+                    <span class="text-4xl font-extrabold text-kw-blue">1M+</span>
+                    <p class="text-sm text-kw-light/70">Curious Minds</p>
+                </div>
+                <div class="text-center">
+                    <span class="text-4xl font-extrabold text-kw-blue">3x</span>
+                    <p class="text-sm text-kw-light/70">Weekly Content</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <hr class="border-t border-kw-blue/50 my-16">
+
+        <!-- Featured Content Section -->
+        <section id="featured" class="py-16 sm:py-20">
+            <h2 class="text-4xl font-bold text-center mb-12 text-kw-light">Featured Topics & Series</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Content Card 1: Science (ACTIVE - Wikipedia: Quantum Mechanics) -->
+                <div class="bg-kw-dark/50 border border-kw-blue/20 p-6 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] hover:shadow-kw-blue/30">
+                    <div class="text-5xl mb-4 text-kw-blue">🧪</div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">The Quantum Realm</h3>
+                    <p class="text-kw-light/70 text-sm">A deep dive into particle physics, string theory, and the weird rules governing the smallest parts of our universe. Learn about entanglement and wave-particle duality.</p>
+                    <a href="https://en.wikipedia.org/wiki/Quantum_mechanics" target="_blank" class="mt-4 inline-block text-kw-blue hover:underline text-sm font-medium">Explore Series &rarr;</a>
+                </div>
+
+                <!-- Content Card 2: History (ACTIVE - Wikipedia: Ancient History) -->
+                <div class="bg-kw-dark/50 border border-kw-blue/20 p-6 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] hover:shadow-kw-blue/30">
+                    <div class="text-5xl mb-4 text-kw-blue">🏛️</div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Ancient Mysteries Uncovered</h3>
+                    <p class="text-kw-light/70 text-sm">From the lost city of Atlantis to the secrets of the pyramids, we use archaeological facts and historical analysis to separate myth from reality.</p>
+                    <a href="https://en.wikipedia.org/wiki/Ancient_history" target="_blank" class="mt-4 inline-block text-kw-blue hover:underline text-sm font-medium">Explore Series &rarr;</a>
+                </div>
+
+                <!-- Content Card 3: Space (ACTIVE - Wikipedia: Cosmology) -->
+                <div class="bg-kw-dark/50 border border-kw-blue/20 p-6 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] hover:shadow-kw-blue/30">
+                    <div class="text-5xl mb-4 text-kw-blue">🚀</div>
+                    <h3 class="text-xl font-semibold mb-2 text-white">Cosmic Frontiers</h3>
+                    <p class="text-kw-light/70 text-sm">Travel through space with us! Learn about black holes, exoplanets, dark matter, and the future of human exploration beyond our solar system.</p>
+                    <a href="https://en.wikipedia.org/wiki/Cosmology" target="_blank" class="mt-4 inline-block text-kw-blue hover:underline text-sm font-medium">Explore Series &rarr;</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="mt-20 py-10 bg-kw-dark border-t border-kw-blue/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold mb-4 text-kw-light">Connect with Knowledge World</h2>
+            <p class="text-kw-light/70 mb-6">Never miss an episode! Follow us on our main platform and social media.</p>
+
+            <!-- Social Links (All 4 Icons are now ACTIVE) -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <!-- WhatsApp Icon -->
+                <a href="https://whatsapp.com/channel/0029VaDq8oOLNSaC0kfxR425" target="_blank" onclick="return handleSocialClick('WhatsApp')" class="text-kw-blue hover:text-white transition duration-300 text-3xl" aria-label="WhatsApp Channel">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.35 4.96l-1.4 5.15 5.26-1.37c1.47.81 3.12 1.25 4.7 1.25h.02c5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zm4.84 14.73c-.24.78-.96 1.41-1.63 1.57-.45.1-.81.15-1.16.15-.31 0-.61-.06-.88-.13-1.02-.27-2.61-.95-3.81-2.43-1.57-1.95-2.02-3.8-2.09-3.92-.07-.1-.58-.87-.58-1.62s.47-1.4.67-1.6c.18-.17.39-.24.52-.27.13-.03.26-.03.39-.03h.84c.15 0 .28.05.4.31l.9 2.05c.08.19.14.33.05.51-.09.18-.31.37-.44.5-.13.14-.26.29-.38.45-.12.16-.24.34-.14.54.1.2.59 1.05 1.28 1.63.85.73 1.54 1.01 2.03 1.26.17.08.31.11.45.14.13.03.28.05.42.04.14-.01.3-.09.43-.19l.7-.85c.16-.19.34-.28.53-.28h1.16c.15 0 .47-.02.68.21.2.22.8.96 1.15 1.77.34.81.34 1.49.25 1.62-.08.13-.26.2-.55.12z"/></svg>
+                </a>
+                <!-- Facebook Icon (UPDATED LINK) -->
+                <a href="https://www.facebook.com/profile.php?id=100064668564171" target="_blank" onclick="return handleSocialClick('Facebook')" class="text-kw-blue hover:text-white transition duration-300 text-3xl" aria-label="Facebook Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.04c-5.46 0-9.91 4.45-9.91 9.91 0 4.95 3.65 9.07 8.44 9.87V14.1H8.09V12h2.44V9.3c0-2.42 1.45-3.75 3.64-3.75 1.04 0 2.15.19 2.15.19v2.37h-1.21c-1.19 0-1.56.74-1.56 1.5V12h2.64l-.42 2.1h-2.22v7.71c4.79-.8 8.44-4.92 8.44-9.87C21.91 6.49 17.46 2.04 12 2.04z"/></svg>
+                </a>
+                <!-- TikTok Icon -->
+                <a href="https://www.tiktok.com/@luckyaristo?_t=ZM-90JtHesvLtD&_r=1" target="_blank" onclick="return handleSocialClick('TikTok')" class="text-kw-blue hover:text-white transition duration-300 text-3xl" aria-label="TikTok Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 2.5a2.5 2.5 0 00-2.5 2.5v12.44a2.5 2.5 0 00-2.5 2.5 2.5 2.5 0 002.5 2.5 2.5 2.5 0 002.5-2.5V4.99a2.5 2.5 0 00-2.5-2.5zm-5 0A2.5 2.5 0 0012 5v14.45c-2.41-.66-4.5-2.22-4.5-5.95 0-2.8 1.9-4.96 4.38-5.32V4.99a2.5 2.5 0 00-2.5-2.5 2.5 2.5 0 00-2.5 2.5v13.56c-1.14-.9-1.92-2.13-2.18-3.47.28-.15.58-.23.91-.23 1.57 0 2.85 1.28 2.85 2.85s-1.28 2.85-2.85 2.85c-1.57 0-2.85-1.28-2.85-2.85 0-1.63 1.34-3.08 3-3.18v-4.51c-3.12.33-5.5 3.03-5.5 6.34 0 3.73 2.76 6.94 6.78 7.42V21a2.5 2.5 0 005-5v-13a2.5 2.5 0 00-2.5-2.5z"/></svg>
+                </a>
+                
+                <!-- Globe Icon (Now set to the same Facebook URL, as you wanted all 4 active) -->
+                <a href="https://www.facebook.com/profile.php?id=100064668564171" target="_blank" onclick="return handleSocialClick('Globe/Website')" class="text-kw-blue hover:text-white transition duration-300 text-3xl" aria-label="Globe/Website Link">
+                    <span class="w-8 h-8 text-4xl">🌐</span>
+                </a>
+            </div>
+
+            <p class="text-sm text-kw-light/50">© 2024 Knowledge World 🌍. All rights reserved. | Built for curious minds.</p>
+            <div id="message-box" class="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-lg shadow-lg hidden transition-opacity duration-300 z-50"></div>
+        </div>
+    </footer>
+
+    <script>
+        // Define your channel URLs globally for easy access
+        const WHATSAPP_URL = "https://whatsapp.com/channel/0029VaDq8oOLNSaC0kfxR425";
+        const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=100064668564171"; // Updated Facebook Profile URL
+        const TIKTOK_URL = "https://www.tiktok.com/@luckyaristo?_t=ZM-90JtHesvLtD&_r=1";
+        const GLOBE_URL = FACEBOOK_URL; // Setting the Globe icon to the Facebook URL for now
+
+        /** Global message box function (replaces alert) */
+        function showMessage(message) {
+            const msgBox = document.getElementById('message-box');
+            msgBox.textContent = message;
+            msgBox.classList.remove('hidden', 'opacity-0');
+            msgBox.classList.add('opacity-100');
+
+            setTimeout(() => {
+                msgBox.classList.remove('opacity-100');
+                msgBox.classList.add('opacity-0');
+                // Hide after transition
+                setTimeout(() => {
+                    msgBox.classList.add('hidden');
+                }, 300);
+            }, 3000);
+        }
+
+        /** Handles the main CTA click - opens WhatsApp Channel */
+        function handleCtaClick() {
+            window.open(WHATSAPP_URL, "_blank");
+            showMessage("Opening Knowledge World's WhatsApp Channel!");
+        }
+
+        /** Handles social media link clicks - opens in a new tab */
+        function handleSocialClick(platform) {
+            let url = "";
+            if (platform === 'WhatsApp') {
+                url = WHATSAPP_URL;
+            } else if (platform === 'Facebook') {
+                url = FACEBOOK_URL;
+            } else if (platform === 'TikTok') {
+                url = TIKTOK_URL;
+            } else if (platform === 'Globe/Website') {
+                url = GLOBE_URL;
+            }
+
+            if (url === "#" || url === null) {
+                showMessage(`The ${platform} link is not yet set. Please provide a URL.`);
+            } else {
+                // Since this function is only called by the <a> tags, the navigation is handled by the browser.
+                showMessage(`Opening ${platform} link!`);
+            }
+            return true; // Allow the default link behavior
+        }
+
+        /** Toggles the mobile menu visibility */
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                openIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
+
